@@ -4,7 +4,7 @@
  <meta charset="utf-8">
  <title>Brooke's Page</title>
 </head>
-<body style="background-color:rgb(105,105,105)">
+<body style="background-color:rgb(0,0,0)">
 <style>
     h1 {background-color: rgb(0,128,128); color: rgb(211,211,211); font-size: 65px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; text-shadow:
          4px  4px 0 #000,
@@ -13,51 +13,277 @@
         -2px  2px 0 #000,
          2px  2px 0 #000;
     }
-    p {color: black; font-family: "Comic Sans MS", cursive, sans-serif; font-size: 18px;}
+label{color: rgb(211,211,211); float:center; font-size: 24px; font-family:"Palatino Linotype", "Book Antiqua";}
+p {color: rgb(211,211,211); font-family:"Palatino Linotype", "Book Antiqua"; Palatino, serif; font-size: 20px;}
     h2 {font-size: 32px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; background-color: rgb(0,128,128);text-shadow:
      2px  2px 0 #D3D3D3,
      -.75px -.75px 0 #D3D3D3,
      .75px -.75px 0 #D3D3D3,
      -.75px  .75px 0 #D3D3D3,
         .75px  .75px 0 #D3D3D3;}
-    input[type=text]{text-align: center; float: center; display: inline-block; width: 25%; height: 23px; margin: 4px; padding: 3px}
-    iframe {align-content: center; display: block; margin-left:auto; margin-right:auto}
+input[type=text]{text-align: center; display: block; float: center; display: inline-block; width: 25%; height: 23px; margin: 4px; padding: 3px}
+iframe {border: 3px rgb(0,128,128); display: block; margin-left:auto; margin-right:auto}
     th {font-family: "Comic Sans MS", cursive, sans-serif;font-size: 18px;}
     table th {text-align: left; padding: 4px 32px 4 px 8px;}
     table tr: nth-child(odd) td {background-color: lightcyan;}
     table td {border: 1px solid green; padding: 4px 8px;}
     .output {color: rgb(211,211,211); font-size: 24px; font-family: "Palatino Linotype", "Book Antiqua";}
+    .page-section {
+        /*
+            height: 480px;
+            width: 50%; */
+            margin-left: 17%;
+            margin-top: 5%;
+         
+           /* padding: 3em;*/
+        /*background: linear-gradient(45deg, #43cea2 10%, #185a9d 90%);*/
+            /*color: white;
+            box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.5);*/
+    }
+    * {
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        transition: all .1s ease;
+    }
+    .navigation {
+        position: fixed;
+        width: 13%;
+        margin-left: 2%;
+        font-size: 20px;
+        /*color: #aaa;*/
+        /*: #fff;*/
+        background-color: rgb(100,100,100);
+        
+        a:link {
+            display: block;
+            color: white;
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            /*text-decoration: none;*/
+            /*
+            padding: 1em;
+                font-weight: 400;
+            */
+        a:visited{
+            color:green;
+        }
+        
+        a:hover {
+            background-color: #aaa;
+                }
+            
+            a:active {
+                color: white;
+                background-color: rgba(0,0,0,0.1);
+               }
+        }
+    }
     </style>
 
 <body>
+     <link href='https://fonts.googleapis.com/css?family=Lato:100,400,700' rel='stylesheet' type='text/css'>
+         
+    <nav class="navigation" id="mainNav">
+                <a class="navigation__link" href="#1">Drawing 1</a>
+                <a class="navigation__link" href="#2">Drawing 2</a>
+                <a class="navigation__link" href="#3">Drawing 3</a>
+                <a class="navigation__link" href="#4">Drawing 4</a>
+                    <a class="navigation__link" href="#5">Drawing 5</a>
+                    <a class="navigation__link" href="#6">Drawing 6</a>
+                    <a class="navigation__link" href="#7">Drawing 7</a>
+    </nav>
+    
+    <script>
+        $(document).ready(function() {
+                $('a[href*=#]').bind('click', function(e) {
+                        e.preventDefault(); // prevent hard jump, the default behavior
 
+                        var target = $(this).attr("href"); // Set the target as variable
+
+                        // perform animated scrolling by getting top-position of target-element and set it as scroll target
+                        $('html, body').stop().animate({
+                                scrollTop: $(target).offset().top
+                        }, 600, function() {
+                                location.hash = target; //attach the hash (#jumptarget) to the pageurl
+                        });
+
+                        return false;
+                });
+        });
+
+        $(window).scroll(function() {
+                var scrollDistance = $(window).scrollTop();
+
+                // Show/hide menu on scroll
+                //if (scrollDistance >= 850) {
+                //        $('nav').fadeIn("fast");
+                //} else {
+                //        $('nav').fadeOut("fast");
+                //}
+            
+                // Assign active class to nav links while scolling
+                $('.page-section').each(function(i) {
+                        if ($(this).position().top <= scrollDistance) {
+                                $('.navigation a.active').removeClass('active');
+                                $('.navigation a').eq(i).addClass('active');
+                        }
+                });
+        }).scroll();
+        </script>
+
+ <div class="page-section hero" id="1">
  <h1 align="center">Brooke's Drawings</h1>
  
  <p>Welcome to the Brooke's Drawings! These are sketches done by Brooke during the Corona quarantine.  The references are all from People or InStyle magazines in the household. Let's see who can guess which pictures correctly! </p>
 
- <h2>Drawing 1</h2>
- <iframe src="https://drive.google.com/file/d/1WOVFqglGe7hvzNT9DzVlzGvl232oWtk6/preview" width="480" height="640"></iframe> <br>
- <input type="text" id="userInput1"=>Who is this?</input>
+ <h2>First...your name!</h2>
+     <label for="userInput1">Please enter your name here: </label><input align="center" type="text" id="YourName"> <br> <br>
+         
+     <h2>Drawing 1</h2>
+     <iframe src="https://drive.google.com/file/d/1WOVFqglGe7hvzNT9DzVlzGvl232oWtk6/preview" width="480" height="640"></iframe> <br>
+     <input align="center" type="text" id="userInput1"><label for="userInput1">Who is this?</label>
+ </div>
+ <div class="page-section" id="2">
+     <h2>Drawing 2</h2>
+     <iframe  src="https://drive.google.com/file/d/1RFXDWuKpOytPbxxX7_3JZhjSxZSVVzgK/preview" width="480" height="640" ></iframe> <br>
+     <input align="center" type="text" id="userInput2"><label for="userInput2">Who is this?</label>
+ </div>
+ 
+ <div class="page-section" id="3">
+     <h2>Drawing 3</h2>
+     <iframe src="https://drive.google.com/file/d/1NK33t6QLP2R6ggY6R6fgWPUDN5ehL1Fs/preview" width="480" height="640"></iframe> <br>
+     <input align="center" type="text" id="userInput3"><label for="userInput3">Who is this?</label>
+ </div>
+ 
+ <div class="page-section" id="4">
+     <h1>Section Four</h1>
+ </div>
+ <div class="page-section" id="5">
+     <h1>Section Five</h1>
+ </div>
+ <div class="page-section" id="6">
+     <h1>Section Six</h1>
+ </div>
+ <div class="page-section" id="7">
+     <h1>Section Seven</h1>
+ </div>
 
 
- <h2>Drawing 2</h2>
- <iframe  src="https://drive.google.com/file/d/1RFXDWuKpOytPbxxX7_3JZhjSxZSVVzgK/preview" width="480" height="640" ></iframe> <br>
- <input type="text" id="userInput2"=>Who is this?</input>
 
- <h2>Drawing 3</h2>
- <iframe src="https://drive.google.com/file/d/1NK33t6QLP2R6ggY6R6fgWPUDN5ehL1Fs/preview" width="480" height="640"></iframe> <br>
- <input type="text" id="userInput3"=>Who is this?</input>
+ 
+
+ 
 
  <h2>Drawing 4</h2>
  <iframe src="https://drive.google.com/file/d/1rf0KZPMnxi3MyP8Aa89YUIwOnlEkxjKB/preview" width="480" height="640"></iframe> <br>
- <input type="text" id="userInput4"=>Who is this?</input>
+  <input align="center" type="text" id="userInput4"><label for="userInput4">Who is this?</label>
 
  <h2>Drawing 5</h2>
  <iframe src="https://drive.google.com/file/d/1dB5GdrIWM5bB-x5BznPjT6FrQp_zcmUi/preview" width="480" height="640"></iframe> <br>
- <input type="text" id="userInput5"=>Who is this?</input>
+ <input align="center" type="text" id="userInput5"><label for="userInput5">Who is this?</label>
+ 
+ <h2>Drawing 6</h2>
+ <iframe src="https://drive.google.com/file/d/1ksmbOxhbz8L6YEeeeF2Mk4EJ3eMtE5Dw/preview" width="480" height="640"></iframe> <br>
+  <input align="center" type="text" id="userInput6"><label for="userInput6">Who is this?</label>
+ 
+ <h2>Drawing 7</h2>
+ <iframe src="https://drive.google.com/file/d/1TAzuTIkfGnCYYlI_xb_SNpIbq3uW7wPE/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput7"><label for="userInput7">Who is this?</label>
+ 
+ <h2>Drawing 8</h2>
+ <iframe src="https://drive.google.com/file/d/1d3xMvXNgRFexlQOPzToDRqi_ty-DqDbD/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput8"><label for="userInput8">Who is this?</label>
+ 
+ <h2>Drawing 9</h2>
+ <iframe src="https://drive.google.com/file/d/1jbU7oeaIBg8W7mZgczvGSNgGwdbYF9TN/preview" width="480" height="640"></iframe><br>
+ <input align="center" type="text" id="userInput9"><label for="userInput9">Who is this?</label>
+
+ <h2>Drawing 10</h2>
+ <iframe src="https://drive.google.com/file/d/1WIOdQ7r5BHwe4dv_x9TM0dYZA6qrkOco/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput10"><label for="userInput10">Who is this?</label>
+ 
+ <h2>Drawing 11</h2>
+ <iframe src="https://drive.google.com/file/d/1Zlqha1o4BBi-vkhxj9Uy-NoTenhS_K18/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput11"><label for="userInput11">Who is this?</label>
+ 
+ <h2>Drawing 12</h2>
+ <iframe src="https://drive.google.com/file/d/1EEjZT1RdXJfuEfVps8Zp0Zox_0exJyk_/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput12"><label for="userInput12">Who is this?</label>
+ 
+ <h2>Drawing 13</h2>
+ <iframe src="https://drive.google.com/file/d/1rR9Q-CijsxOtHqW0Mly7SvxY9p6CT3va/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput13"><label for="userInput13">Who is this?</label>
+ 
+ <h2>Drawing 14</h2>
+ <iframe src="https://drive.google.com/file/d/1gWS8sQikiKbjzxpMJvYMPe-jQnILmvqr/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput14"><label for="userInput14">Who is this?</label>
+ 
+ <h2>Drawing 15</h2>
+ <iframe src="https://drive.google.com/file/d/1QVGcFWDLyxgRW0rPyrnQuaEncjMAB0L-/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput15"><label for="userInput15">Who is this?</label>
+ 
+ <h2>Drawing 16</h2>
+ <iframe src="https://drive.google.com/file/d/1nx-9KRkNHsZcy6PYRVsSaWRfu8Nx_0P3/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput16"><label for="userInput16">Who is this?</label>
+ 
+ <h2>Drawing 17</h2>
+ <iframe src="https://drive.google.com/file/d/11fV4KR7SjFHlahMlLSnBDNZ7oAqcTicp/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput17"><label for="userInput17">Who is this?</label>
+ 
+ <h2>Drawing 18</h2>
+ <iframe src="https://drive.google.com/file/d/12M_Ds7_2xBmHBmM7Et72V3tSJ90nkiGy/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput18"><label for="userInput18">Who is this?</label>
+ 
+ <h2>Drawing 19</h2>
+ <iframe src="https://drive.google.com/file/d/1y8LRmx9oz8FMxFCPmHFyj2evcwBn2Q4J/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput19"><label for="userInput19">Who is this?</label>
+ 
+ <h2>Drawing 20</h2>
+ <iframe src="https://drive.google.com/file/d/10qNmTSniwrsCAvWtKWUkaaq0YK2u-bBn/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput20"><label for="userInput20">Who is this?</label>
+ 
+ <h2>Drawing 21</h2>
+ <iframe src="https://drive.google.com/file/d/12ap3jkvsPr7zRBLhMTbih1227jKq4MvB/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput21"><label for="userInput21">Who is this?</label>
+ 
+ <h2>Drawing 22</h2>
+ <iframe src="https://drive.google.com/file/d/15AflenQek40MwHbRV42YnAzVemVEtJDT/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput22"><label for="userInput22">Who is this?</label>
+ 
+ <h2>Drawing 23</h2>
+ <iframe src="https://drive.google.com/file/d/13_jX7AlT0OyRZsWy7ndbzEu8BM7Rk5Le/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput23"><label for="userInput23">Who is this?</label>
+ 
+ <h2>Drawing 24</h2>
+ <iframe src="https://drive.google.com/file/d/1VtKTjGHAT2CfuAIenH_tTf0MMzv9peZQ/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput24"><label for="userInput24">Who is this?</label>
+ 
+ <h2>Drawing 25</h2>
+ <iframe src="https://drive.google.com/file/d/1k45Otx3yZGNdFRq9rBOKIs2VoDnjg2NM/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput25"><label for="userInput25">Who is this?</label>
+ 
+ <h2>Drawing 26</h2>
+ <iframe src="https://drive.google.com/file/d/11uJQl9VcIkp3K5fvxxskS5XVwfHmNC8L/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput26"><label for="userInput26">Who is this?</label>
+ 
+ <h2>Drawing 27</h2>
+ <iframe src="https://drive.google.com/file/d/1c1a27uLc3_1xDUY30QbxoOpWX7l3M3Ma/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput27"><label for="userInput27">Who is this?</label>
+ 
+ <h2>Drawing 28</h2>
+ <iframe src="https://drive.google.com/file/d/1syg9yk6f2I8_jISb6bfk5WgT0TjmpSNI/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput28"><label for="userInput28">Who is this?</label>
+ 
+ <h2>Drawing 29</h2>
+ <iframe src="https://drive.google.com/file/d/1NeKZ-kb9_HdzZcmMq3nm5aa16JChLwOv/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput29"><label for="userInput29">Who is this?</label>
+ 
+ <h2>Drawing 30</h2>
+ <iframe src="https://drive.google.com/file/d/1mJIZ0GySDv8Db4eEy0hjuiklGe-xlPwu/preview" width="480" height="640"></iframe><br>
+  <input align="center" type="text" id="userInput30"><label for="userInput30">Who is this?</label>
  
 <script>
 function myFunction() {
+    var name1 = document.getElementById("YourName").value;
     var total = 0;
     var answer1 = document.getElementById("userInput1").value;
     answer1 = answer1.replace(/\s+/g, '');
@@ -74,6 +300,81 @@ function myFunction() {
     var answer5 = document.getElementById("userInput5").value;
     answer5 = answer5.replace(/\s+/g, '');
     ans5 = answer5.toLowerCase();
+    var answer6 = document.getElementById("userInput6").value;
+    answer6 = answer6.replace(/\s+/g, '');
+    ans6 = answer6.toLowerCase();
+    var answer7 = document.getElementById("userInput7").value;
+    answer7 = answer7.replace(/\s+/g, '');
+    ans7 = answer7.toLowerCase();
+    var answer8 = document.getElementById("userInput8").value;
+    answer8 = answer8.replace(/\s+/g, '');
+    ans8 = answer8.toLowerCase();
+    var answer9 = document.getElementById("userInput9").value;
+    answer9 = answer9.replace(/\s+/g, '');
+    ans9 = answer9.toLowerCase();
+    var answer10 = document.getElementById("userInput10").value;
+    answer10 = answer10.replace(/\s+/g, '');
+    ans10 = answer10.toLowerCase();
+    var answer11 = document.getElementById("userInput11").value;
+    answer11 = answer11.replace(/\s+/g, '');
+    ans11 = answer11.toLowerCase();
+    var answer12 = document.getElementById("userInput12").value;
+    answer12 = answer12.replace(/\s+/g, '');
+    ans12 = answer12.toLowerCase();
+    var answer13 = document.getElementById("userInput13").value;
+    answer13 = answer13.replace(/[" ]/g, '');
+    ans13 = answer13.toLowerCase();
+    var answer14 = document.getElementById("userInput14").value;
+    answer14 = answer14.replace(/\s+/g, '');
+    ans14 = answer14.toLowerCase();
+    var answer15 = document.getElementById("userInput15").value;
+    answer15 = answer15.replace(/\s+/g, '');
+    ans15 = answer15.toLowerCase();
+    var answer16 = document.getElementById("userInput16").value;
+    answer16 = answer16.replace(/\s+/g, '');
+    ans16 = answer16.toLowerCase();
+    var answer17 = document.getElementById("userInput17").value;
+    answer17 = answer17.replace(/\s+/g, '');
+    ans17 = answer17.toLowerCase();
+    var answer18 = document.getElementById("userInput18").value;
+    answer18 = answer18.replace(/\s+/g, '');
+    ans18 = answer18.toLowerCase();
+    var answer19 = document.getElementById("userInput19").value;
+    answer19 = answer19.replace(/\s+/g, '');
+    ans19 = answer19.toLowerCase();
+    var answer20 = document.getElementById("userInput20").value;
+    answer20 = answer20.replace(/\s+/g, '');
+    ans20 = answer20.toLowerCase();
+    var answer21 = document.getElementById("userInput21").value;
+    answer21 = answer21.replace(/\s+/g, '');
+    ans21 = answer21.toLowerCase();
+    var answer22 = document.getElementById("userInput22").value;
+    answer22 = answer22.replace(/\s+/g, '');
+    ans22 = answer22.toLowerCase();
+    var answer23 = document.getElementById("userInput23").value;
+    answer23 = answer23.replace(/\s+/g, '');
+    ans23 = answer23.toLowerCase();
+    var answer24 = document.getElementById("userInput24").value;
+    answer24 = answer24.replace(/\s+/g, '');
+    ans24 = answer24.toLowerCase();
+    var answer25 = document.getElementById("userInput25").value;
+    answer25 = answer25.replace(/\s+/g, '');
+    ans25 = answer25.toLowerCase();
+    var answer26 = document.getElementById("userInput26").value;
+    answer26 = answer26.replace(/\s+/g, '');
+    ans26 = answer26.toLowerCase();
+    var answer27 = document.getElementById("userInput27").value;
+    answer27 = answer27.replace(/\s+/g, '');
+    ans27 = answer27.toLowerCase();
+    var answer28 = document.getElementById("userInput28").value;
+    answer28 = answer28.replace(/\s+/g, '');
+    ans28 = answer28.toLowerCase();
+    var answer29 = document.getElementById("userInput29").value;
+    answer29 = answer29.replace(/\s+/g, '');
+    ans29 = answer29.toLowerCase();
+    var answer30 = document.getElementById("userInput30").value;
+    answer30 = answer30.replace(/\s+/g, '');
+    ans30 = answer30.toLowerCase();
     
     if (ans1 == "bettywhite")
     {
@@ -83,7 +384,6 @@ function myFunction() {
     else
     {
         document.getElementById("someDiv1").innerHTML = "<span class='output'>1. Betty White--Incorrect. <span class='output'>";
-        /*document.getElementById("lastDiv2").innerHTML(answer1);*/
     }
     if (ans2 == "blakeshelton")
     {
@@ -121,23 +421,240 @@ function myFunction() {
     {
         document.getElementById("someDiv5").innerHTML = "<span class='output'>5. Drew Barrymore--Incorrect</span>";
     }
-  
-    
+    if (ans6 == "harrypotter" || ans6 == "danielradcliffe")
+    {
+       document.getElementById("someDiv6").innerHTML = "<span class='output'>6. Harry Potter/Daniel Radcliffe--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv6").innerHTML = "<span class='output'>6. Harry Potter/Daniel Radcliffe--Incorrect. <span class='output'>";
+    }
+    if (ans7 == "kaleycuoco")
+    {
+       document.getElementById("someDiv7").innerHTML = "<span class='output'>7. Kaley Cuoco--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv7").innerHTML = "<span class='output'>7. Kaley Cuoco--Incorrect. <span class='output'>";
+    }
+    if (ans8 == "leonardodicaprio")
+    {
+       document.getElementById("someDiv8").innerHTML = "<span class='output'>8. Leonardo DiCaprio--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv8").innerHTML = "<span class='output'>8. Leonardo DiCaprio--Incorrect. <span class='output'>";
+    }
+    if (ans9 == "michaelstrahan")
+    {
+       document.getElementById("someDiv9").innerHTML = "<span class='output'>9. Michael Strahan--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv9").innerHTML = "<span class='output'>9. Michael Strahan--Incorrect. <span class='output'>";
+    }
+    if (ans10 == "priyankachopra" || ans10== "priyankachoprajonas" || ans10 == "priyankajonas")
+    {
+       document.getElementById("someDiv10").innerHTML = "<span class='output'>10. Priyanka Chopra Jonas--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv10").innerHTML = "<span class='output'>10. Priyanka Chopra Jonas--Incorrect. <span class='output'>";
+    }
+    if (ans11 == "selenagomez")
+    {
+       document.getElementById("someDiv11").innerHTML = "<span class='output'>11. Selena Gomez--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv11").innerHTML = "<span class='output'>11. Selena Gomez--Incorrect. <span class='output'>";
+    }
+    if (ans12 == "shaq"||ans12=="shaquilleoneal"||ans12 == "shaquilleo'neal"||ans12 == "shaqo'neal")
+    {
+       document.getElementById("someDiv12").innerHTML = "<span class='output'>12. Shaquille O'Neal--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv12").innerHTML = "<span class='output'>12. Shaquille O'Neal--Incorrect. <span class='output'>";
+    }
+    if (ans13 == "dwaynejohnson" || ans13 == "dwaynetherockjohnson" || ans13 == "therock")
+    {
+       document.getElementById("someDiv13").innerHTML = "<span class='output'>13. Dwayne 'the Rock' Johnson --Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv13").innerHTML = "<span class='output'>13. Dwayne 'the Rock' Johnson--Incorrect. <span class='output'>";
+    }
+    if (ans14 == "willferrell" ||ans14 == "williamferrell")
+    {
+       document.getElementById("someDiv14").innerHTML = "<span class='output'>14. Will Ferrell--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv14").innerHTML = "<span class='output'>14. Will Ferrell--Incorrect. <span class='output'>";
+    }
+    if (ans15 == "sofiavergara")
+    {
+       document.getElementById("someDiv15").innerHTML = "<span class='output'>15. Sofia Vergara--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv15").innerHTML = "<span class='output'>15. Sofia Vergara--Incorrect. <span class='output'>";
+    }
+    if (ans16 == "taylorswift" || ans16 == "tswift")
+    {
+       document.getElementById("someDiv16").innerHTML = "<span class='output'>16. Taylor Swift--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv16").innerHTML = "<span class='output'>16. Taylor Swift--Incorrect. <span class='output'>";
+    }
+    if (ans17 == "rihanna")
+    {
+       document.getElementById("someDiv17").innerHTML = "<span class='output'>17. Rhianna--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv17").innerHTML = "<span class='output'>17. Rhianna--Incorrect. <span class='output'>";
+    }
+    if (ans18 == "scarlettjohansson")
+    {
+       document.getElementById("someDiv18").innerHTML = "<span class='output'>18. Scarlett Johansson--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv18").innerHTML = "<span class='output'>18. Scarlett Johansson--Incorrect. <span class='output'>";
+    }
+    if (ans19 == "octaviaspencer")
+    {
+       document.getElementById("someDiv19").innerHTML = "<span class='output'>19. Octavia Spencer--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv19").innerHTML = "<span class='output'>19. Octavia Spencer--Incorrect. <span class='output'>";
+    }
+    if (ans20 == "kendalljenner")
+    {
+       document.getElementById("someDiv20").innerHTML = "<span class='output'>20. Kendall Jenner--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv20").innerHTML = "<span class='output'>20. Kendall Jenner--Incorrect. <span class='output'>";
+    }
+    if (ans21 == "jenniferaniston" || ans21 == "jenaniston")
+    {
+       document.getElementById("someDiv21").innerHTML = "<span class='output'>21. Jennifer Aniston--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv21").innerHTML = "<span class='output'>21. Jennifer Aniston--Incorrect. <span class='output'>";
+    }
+    if (ans22 == "johnlegend")
+    {
+       document.getElementById("someDiv22").innerHTML = "<span class='output'>22. John Legend--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv22").innerHTML = "<span class='output'>22. John Legend--Incorrect. <span class='output'>";
+    }
+    if (ans23 == "georgeclooney")
+    {
+       document.getElementById("someDiv23").innerHTML = "<span class='output'>23. George Clooney--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv23").innerHTML = "<span class='output'>23. George Clooney--Incorrect. <span class='output'>";
+    }
+    if (ans24 == "princeharry" || ans24 == "harry")
+    {
+       document.getElementById("someDiv24").innerHTML = "<span class='output'>24. Prince Harry--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv24").innerHTML = "<span class='output'>24. Prince Harry--Incorrect. <span class='output'>";
+    }
+    if (ans25 == "chrissyteigan" || ans25 == "chrissyteiganlegend" || ans25 == "chrissylegend")
+    {
+       document.getElementById("someDiv25").innerHTML = "<span class='output'>25. Chrissy Teigan--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv25").innerHTML = "<span class='output'>25. Chrissy Teigan--Incorrect. <span class='output'>";
+    }
+    if (ans26 == "chrispratt")
+    {
+       document.getElementById("someDiv26").innerHTML = "<span class='output'>26. Chris Pratt--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv26").innerHTML = "<span class='output'>26. Chris Pratt--Incorrect. <span class='output'>";
+    }
+    if (ans27 == "demilovato")
+    {
+       document.getElementById("someDiv27").innerHTML = "<span class='output'>27. Demi Lovato--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv27").innerHTML = "<span class='output'>27. Demi Lovato--Incorrect. <span class='output'>";
+    }
+    if (ans28 == "channingtatum")
+    {
+       document.getElementById("someDiv28").innerHTML = "<span class='output'>28. Channing Tatum--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv28").innerHTML = "<span class='output'>28. Channing Tatum--Incorrect. <span class='output'>";
+    }
+    if (ans29 == "mindykaling")
+    {
+       document.getElementById("someDiv29").innerHTML = "<span class='output'>29. Mindy Kaling--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv29").innerHTML = "<span class='output'>29. Mindy Kaling--Incorrect. <span class='output'>";
+    }
+    if (ans30 == "trump" || ans30 == "donaldtrump" || ans30 == "presidenttrump")
+    {
+       document.getElementById("someDiv30").innerHTML = "<span class='output'>30. Donald Trump--Correct</span>";
+       total++;
+    }
+    else
+    {
+        document.getElementById("someDiv30").innerHTML = "<span class='output'>30. Donald Trump--Incorrect. <span class='output'>";
+    }
+
     var button1 = document.createElement("button");
     var next = document.createTextNode("Total Score");
     button1.appendChild(next);
     button1.id = "buttonID";
     document.getElementById("lastDiv").appendChild(button1);
     document.getElementById("buttonID").onclick = function (){
-        alert("Your total score: "+total+"/30");
+        alert(name1+", your total score is: "+total+"/30");
     }
-    /*
-    button1.addEventListener("click", myFunc2(total));
-    function myFunc2(total)
-    {
-      document.getElementById("Total").innerHTML = total;
-    }
-     */
 
 }
 
@@ -162,10 +679,59 @@ function myFunction() {
 </div>
 <div id="someDiv5">
 </div>
+<div id="someDiv6">
+</div>
+<div id="someDiv7">
+</div>
+<div id="someDiv8">
+</div>
+<div id="someDiv9">
+</div>
+<div id="someDiv10">
+</div>
+<div id="someDiv11">
+</div>
+<div id="someDiv12">
+</div>
+<div id="someDiv13">
+</div>
+<div id="someDiv14">
+</div>
+<div id="someDiv15">
+</div>
+<div id="someDiv16">
+</div>
+<div id="someDiv17">
+</div>
+<div id="someDiv18">
+</div>
+<div id="someDiv19">
+</div>
+<div id="someDiv20">
+</div>
+<div id="someDiv21">
+</div>
+<div id="someDiv22">
+</div>
+<div id="someDiv23">
+</div>
+<div id="someDiv24">
+</div>
+<div id="someDiv25">
+</div>
+<div id="someDiv26">
+</div>
+<div id="someDiv27">
+</div>
+<div id="someDiv28">
+</div>
+<div id="someDiv29">
+</div>
+<div id="someDiv30">
+</div>
 <div id="lastDiv">
 </div>
-<div id="lastDiv2">
-</div>
+
 
  
  
@@ -177,3 +743,4 @@ function myFunction() {
   
 
 </html>
+
