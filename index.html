@@ -4,7 +4,7 @@
  <meta charset="utf-8">
  <title>Brooke's Page</title>
 </head>
-<body style="background-color:rgb(0,0,0)">
+<body style="background-color:rgb(30,30,30)">
 <style>
     h1 {background-color: rgb(0,128,128); color: rgb(211,211,211); font-size: 65px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; text-shadow:
          4px  4px 0 #000,
@@ -15,7 +15,7 @@
     }
 label{color: rgb(211,211,211); float:center; font-size: 24px; font-family:"Palatino Linotype", "Book Antiqua";}
 p {color: rgb(211,211,211); font-family:"Palatino Linotype", "Book Antiqua"; Palatino, serif; font-size: 20px;}
-    h2 {font-size: 32px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; background-color: rgb(0,128,128);text-shadow:
+h2 {font-size: 32px; color: rgb(30,30,30); font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; background-color: rgb(0,128,128);text-shadow:
      2px  2px 0 #D3D3D3,
      -.75px -.75px 0 #D3D3D3,
      .75px -.75px 0 #D3D3D3,
@@ -28,6 +28,20 @@ iframe {border: 3px rgb(0,128,128); display: block; margin-left:auto; margin-rig
     table tr: nth-child(odd) td {background-color: lightcyan;}
     table td {border: 1px solid green; padding: 4px 8px;}
     .output {color: rgb(211,211,211); font-size: 24px; font-family: "Palatino Linotype", "Book Antiqua";}
+   /* * {
+        font-family: "Palatino Linotype", "Book Antiqua";
+        font-weight: 300;
+        -webkit-transition: all .1s ease;
+        color: white;
+    }
+*/
+    html, body {
+        height: 100%;
+    }
+
+/*.nav{
+    color: blueviolet;
+}*/
     .page-section {
         /*
             height: 480px;
@@ -40,21 +54,17 @@ iframe {border: 3px rgb(0,128,128); display: block; margin-left:auto; margin-rig
             /*color: white;
             box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.5);*/
     }
-    * {
-        font-family: 'Lato', sans-serif;
-        font-weight: 300;
-        transition: all .1s ease;
-    }
-    .navigation {
+
+.navigation {
         position: fixed;
         width: 13%;
         margin-left: 2%;
         font-size: 20px;
-        /*color: #aaa;*/
+        color: white;
         /*: #fff;*/
         background-color: rgb(100,100,100);
-        
-        a:link {
+
+        &__link {
             display: block;
             color: white;
             font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -63,20 +73,22 @@ iframe {border: 3px rgb(0,128,128); display: block; margin-left:auto; margin-rig
             padding: 1em;
                 font-weight: 400;
             */
-        a:visited{
-            color:green;
-        }
         
-        a:hover {
-            background-color: #aaa;
-                }
-            
-            a:active {
-                color: white;
-                background-color: rgba(0,0,0,0.1);
-               }
+        &:hover {
+            background-color: lightgray;
         }
-    }
+        &.active {
+            color: black;
+            background-color: purple;
+        }
+
+        &:visited{
+            color:lightblue;
+        }
+        }
+}
+    
+
     </style>
 
 <body>
@@ -87,9 +99,32 @@ iframe {border: 3px rgb(0,128,128); display: block; margin-left:auto; margin-rig
                 <a class="navigation__link" href="#2">Drawing 2</a>
                 <a class="navigation__link" href="#3">Drawing 3</a>
                 <a class="navigation__link" href="#4">Drawing 4</a>
-                    <a class="navigation__link" href="#5">Drawing 5</a>
-                    <a class="navigation__link" href="#6">Drawing 6</a>
-                    <a class="navigation__link" href="#7">Drawing 7</a>
+                <a class="navigation__link" href="#5">Drawing 5</a>
+                <a class="navigation__link" href="#6">Drawing 6</a>
+                <a class="navigation__link" href="#7">Drawing 7</a>
+                <a class="navigation__link" href="#8">Drawing 8</a>
+                <a class="navigation__link" href="#9">Drawing 9</a>
+                <a class="navigation__link" href="#10">Drawing 10</a>
+                <a class="navigation__link" href="#11">Drawing 11</a>
+                <a class="navigation__link" href="#12">Drawing 12</a>
+                <a class="navigation__link" href="#13">Drawing 13</a>
+                <a class="navigation__link" href="#14">Drawing 14</a>
+                <a class="navigation__link" href="#15">Drawing 15</a>
+                <a class="navigation__link" href="#16">Drawing 16</a>
+                <a class="navigation__link" href="#17">Drawing 17</a>
+                <a class="navigation__link" href="#18">Drawing 18</a>
+                <a class="navigation__link" href="#19">Drawing 19</a>
+                <a class="navigation__link" href="#20">Drawing 20</a>
+                <a class="navigation__link" href="#21">Drawing 21</a>
+                <a class="navigation__link" href="#22">Drawing 22</a>
+                <a class="navigation__link" href="#23">Drawing 23</a>
+                <a class="navigation__link" href="#24">Drawing 24</a>
+                <a class="navigation__link" href="#25">Drawing 25</a>
+                <a class="navigation__link" href="#26">Drawing 26</a>
+                <a class="navigation__link" href="#27">Drawing 27</a>
+                <a class="navigation__link" href="#28">Drawing 28</a>
+                <a class="navigation__link" href="#29">Drawing 29</a>
+                <a class="navigation__link" href="#30">Drawing 30</a>
     </nav>
     
     <script>
@@ -155,131 +190,166 @@ iframe {border: 3px rgb(0,128,128); display: block; margin-left:auto; margin-rig
  </div>
  
  <div class="page-section" id="4">
-     <h1>Section Four</h1>
+     <h2>Drawing 4</h2>
+     <iframe src="https://drive.google.com/file/d/1rf0KZPMnxi3MyP8Aa89YUIwOnlEkxjKB/preview" width="480" height="640"></iframe> <br>
+     <input align="center" type="text" id="userInput4"><label for="userInput4">Who is this?</label>
  </div>
+ 
  <div class="page-section" id="5">
-     <h1>Section Five</h1>
+     <h2>Drawing 5</h2>
+     <iframe src="https://drive.google.com/file/d/1dB5GdrIWM5bB-x5BznPjT6FrQp_zcmUi/preview" width="480" height="640"></iframe> <br>
+     <input align="center" type="text" id="userInput5"><label for="userInput5">Who is this?</label>
  </div>
+ 
  <div class="page-section" id="6">
-     <h1>Section Six</h1>
+     <h2>Drawing 6</h2>
+     <iframe src="https://drive.google.com/file/d/1ksmbOxhbz8L6YEeeeF2Mk4EJ3eMtE5Dw/preview" width="480" height="640"></iframe> <br>
+     <input align="center" type="text" id="userInput6"><label for="userInput6">Who is this?</label>
  </div>
+ 
  <div class="page-section" id="7">
-     <h1>Section Seven</h1>
+     <h2>Drawing 7</h2>
+     <iframe src="https://drive.google.com/file/d/1TAzuTIkfGnCYYlI_xb_SNpIbq3uW7wPE/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput7"><label for="userInput7">Who is this?</label>
+ </div>
+ 
+ <div class="page-section" id="8">
+     <h2>Drawing 8</h2>
+     <iframe src="https://drive.google.com/file/d/1d3xMvXNgRFexlQOPzToDRqi_ty-DqDbD/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput8"><label for="userInput8">Who is this?</label>
+ </div>
+ 
+ <div class="page-section" id="9">
+     <h2>Drawing 9</h2>
+     <iframe src="https://drive.google.com/file/d/1jbU7oeaIBg8W7mZgczvGSNgGwdbYF9TN/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput9"><label for="userInput9">Who is this?</label>
+ </div>
+ 
+ <div class="page-section" id="10">
+     <h2>Drawing 10</h2>
+     <iframe src="https://drive.google.com/file/d/1WIOdQ7r5BHwe4dv_x9TM0dYZA6qrkOco/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput10"><label for="userInput10">Who is this?</label>
+ </div>
+ 
+ <div class="page-section" id="11">
+     <h2>Drawing 11</h2>
+     <iframe src="https://drive.google.com/file/d/1Zlqha1o4BBi-vkhxj9Uy-NoTenhS_K18/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput11"><label for="userInput11">Who is this?</label>
+ </div>
+ 
+ <div class="page-section" id="12">
+     <h2>Drawing 12</h2>
+     <iframe src="https://drive.google.com/file/d/1EEjZT1RdXJfuEfVps8Zp0Zox_0exJyk_/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput12"><label for="userInput12">Who is this?</label>
+ </div>
+ 
+ <div class="page-section" id="13">
+     <h2>Drawing 13</h2>
+     <iframe src="https://drive.google.com/file/d/1rR9Q-CijsxOtHqW0Mly7SvxY9p6CT3va/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput13"><label for="userInput13">Who is this?</label>
+ </div>
+ 
+ <div class="page-section" id="14">
+     <h2>Drawing 14</h2>
+     <iframe src="https://drive.google.com/file/d/1gWS8sQikiKbjzxpMJvYMPe-jQnILmvqr/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput14"><label for="userInput14">Who is this?</label>
+ </div>
+ 
+ <div class="page-section" id="15">
+     <h2>Drawing 15</h2>
+     <iframe src="https://drive.google.com/file/d/1QVGcFWDLyxgRW0rPyrnQuaEncjMAB0L-/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput15"><label for="userInput15">Who is this?</label>
  </div>
 
+ <div class="page-section" id="16">
+     <h2>Drawing 16</h2>
+     <iframe src="https://drive.google.com/file/d/1nx-9KRkNHsZcy6PYRVsSaWRfu8Nx_0P3/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput16"><label for="userInput16">Who is this?</label>
+ </div>
+ 
+ <div class="page-section" id="17">
+     <h2>Drawing 17</h2>
+     <iframe src="https://drive.google.com/file/d/11fV4KR7SjFHlahMlLSnBDNZ7oAqcTicp/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput17"><label for="userInput17">Who is this?</label>
+ </div>
+ 
+ <div class="page-section" id="18">
+     <h2>Drawing 18</h2>
+     <iframe src="https://drive.google.com/file/d/12M_Ds7_2xBmHBmM7Et72V3tSJ90nkiGy/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput18"><label for="userInput18">Who is this?</label>
+ </div>
+ 
+ <div class="page-section" id="19">
+     <h2>Drawing 19</h2>
+     <iframe src="https://drive.google.com/file/d/1y8LRmx9oz8FMxFCPmHFyj2evcwBn2Q4J/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput19"><label for="userInput19">Who is this?</label>
+ </div>
 
-
+ <div class="page-section" id="20">
+     <h2>Drawing 20</h2>
+     <iframe src="https://drive.google.com/file/d/10qNmTSniwrsCAvWtKWUkaaq0YK2u-bBn/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput20"><label for="userInput20">Who is this?</label>
+ </div>
  
-
+ <div class="page-section" id="21">
+     <h2>Drawing 21</h2>
+     <iframe src="https://drive.google.com/file/d/12ap3jkvsPr7zRBLhMTbih1227jKq4MvB/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput21"><label for="userInput21">Who is this?</label>
+ </div>
  
-
- <h2>Drawing 4</h2>
- <iframe src="https://drive.google.com/file/d/1rf0KZPMnxi3MyP8Aa89YUIwOnlEkxjKB/preview" width="480" height="640"></iframe> <br>
-  <input align="center" type="text" id="userInput4"><label for="userInput4">Who is this?</label>
-
- <h2>Drawing 5</h2>
- <iframe src="https://drive.google.com/file/d/1dB5GdrIWM5bB-x5BznPjT6FrQp_zcmUi/preview" width="480" height="640"></iframe> <br>
- <input align="center" type="text" id="userInput5"><label for="userInput5">Who is this?</label>
+ <div class="page-section" id="22">
+     <h2>Drawing 22</h2>
+     <iframe src="https://drive.google.com/file/d/15AflenQek40MwHbRV42YnAzVemVEtJDT/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput22"><label for="userInput22">Who is this?</label>
+ </div>
  
- <h2>Drawing 6</h2>
- <iframe src="https://drive.google.com/file/d/1ksmbOxhbz8L6YEeeeF2Mk4EJ3eMtE5Dw/preview" width="480" height="640"></iframe> <br>
-  <input align="center" type="text" id="userInput6"><label for="userInput6">Who is this?</label>
+ <div class="page-section" id="23">
+   <h2>Drawing 23</h2>
+   <iframe src="https://drive.google.com/file/d/13_jX7AlT0OyRZsWy7ndbzEu8BM7Rk5Le/preview" width="480" height="640"></iframe><br>
+   <input align="center" type="text" id="userInput23"><label for="userInput23">Who is this?</label>
+ </div>
  
- <h2>Drawing 7</h2>
- <iframe src="https://drive.google.com/file/d/1TAzuTIkfGnCYYlI_xb_SNpIbq3uW7wPE/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput7"><label for="userInput7">Who is this?</label>
+ <div class="page-section" id="24">
+     <h2>Drawing 24</h2>
+     <iframe src="https://drive.google.com/file/d/1VtKTjGHAT2CfuAIenH_tTf0MMzv9peZQ/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput24"><label for="userInput24">Who is this?</label>
+ </div>
  
- <h2>Drawing 8</h2>
- <iframe src="https://drive.google.com/file/d/1d3xMvXNgRFexlQOPzToDRqi_ty-DqDbD/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput8"><label for="userInput8">Who is this?</label>
+ <div class="page-section" id="25">
+     <h2>Drawing 25</h2>
+     <iframe src="https://drive.google.com/file/d/1k45Otx3yZGNdFRq9rBOKIs2VoDnjg2NM/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput25"><label for="userInput25">Who is this?</label>
+ </div>
  
- <h2>Drawing 9</h2>
- <iframe src="https://drive.google.com/file/d/1jbU7oeaIBg8W7mZgczvGSNgGwdbYF9TN/preview" width="480" height="640"></iframe><br>
- <input align="center" type="text" id="userInput9"><label for="userInput9">Who is this?</label>
-
- <h2>Drawing 10</h2>
- <iframe src="https://drive.google.com/file/d/1WIOdQ7r5BHwe4dv_x9TM0dYZA6qrkOco/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput10"><label for="userInput10">Who is this?</label>
+ <div class="page-section" id="26">
+     <h2>Drawing 26</h2>
+     <iframe src="https://drive.google.com/file/d/11uJQl9VcIkp3K5fvxxskS5XVwfHmNC8L/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput26"><label for="userInput26">Who is this?</label>
+ </div>
  
- <h2>Drawing 11</h2>
- <iframe src="https://drive.google.com/file/d/1Zlqha1o4BBi-vkhxj9Uy-NoTenhS_K18/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput11"><label for="userInput11">Who is this?</label>
+ <div class="page-section" id="27">
+     <h2>Drawing 27</h2>
+     <iframe src="https://drive.google.com/file/d/1c1a27uLc3_1xDUY30QbxoOpWX7l3M3Ma/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput27"><label for="userInput27">Who is this?</label>
+ </div>
  
- <h2>Drawing 12</h2>
- <iframe src="https://drive.google.com/file/d/1EEjZT1RdXJfuEfVps8Zp0Zox_0exJyk_/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput12"><label for="userInput12">Who is this?</label>
+ <div class="page-section" id="28">
+     <h2>Drawing 28</h2>
+     <iframe src="https://drive.google.com/file/d/1syg9yk6f2I8_jISb6bfk5WgT0TjmpSNI/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput28"><label for="userInput28">Who is this?</label>
+ </div>
  
- <h2>Drawing 13</h2>
- <iframe src="https://drive.google.com/file/d/1rR9Q-CijsxOtHqW0Mly7SvxY9p6CT3va/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput13"><label for="userInput13">Who is this?</label>
+ <div class="page-section" id="29">
+     <h2>Drawing 29</h2>
+     <iframe src="https://drive.google.com/file/d/1NeKZ-kb9_HdzZcmMq3nm5aa16JChLwOv/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput29"><label for="userInput29">Who is this?</label>
+ </div>
  
- <h2>Drawing 14</h2>
- <iframe src="https://drive.google.com/file/d/1gWS8sQikiKbjzxpMJvYMPe-jQnILmvqr/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput14"><label for="userInput14">Who is this?</label>
- 
- <h2>Drawing 15</h2>
- <iframe src="https://drive.google.com/file/d/1QVGcFWDLyxgRW0rPyrnQuaEncjMAB0L-/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput15"><label for="userInput15">Who is this?</label>
- 
- <h2>Drawing 16</h2>
- <iframe src="https://drive.google.com/file/d/1nx-9KRkNHsZcy6PYRVsSaWRfu8Nx_0P3/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput16"><label for="userInput16">Who is this?</label>
- 
- <h2>Drawing 17</h2>
- <iframe src="https://drive.google.com/file/d/11fV4KR7SjFHlahMlLSnBDNZ7oAqcTicp/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput17"><label for="userInput17">Who is this?</label>
- 
- <h2>Drawing 18</h2>
- <iframe src="https://drive.google.com/file/d/12M_Ds7_2xBmHBmM7Et72V3tSJ90nkiGy/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput18"><label for="userInput18">Who is this?</label>
- 
- <h2>Drawing 19</h2>
- <iframe src="https://drive.google.com/file/d/1y8LRmx9oz8FMxFCPmHFyj2evcwBn2Q4J/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput19"><label for="userInput19">Who is this?</label>
- 
- <h2>Drawing 20</h2>
- <iframe src="https://drive.google.com/file/d/10qNmTSniwrsCAvWtKWUkaaq0YK2u-bBn/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput20"><label for="userInput20">Who is this?</label>
- 
- <h2>Drawing 21</h2>
- <iframe src="https://drive.google.com/file/d/12ap3jkvsPr7zRBLhMTbih1227jKq4MvB/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput21"><label for="userInput21">Who is this?</label>
- 
- <h2>Drawing 22</h2>
- <iframe src="https://drive.google.com/file/d/15AflenQek40MwHbRV42YnAzVemVEtJDT/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput22"><label for="userInput22">Who is this?</label>
- 
- <h2>Drawing 23</h2>
- <iframe src="https://drive.google.com/file/d/13_jX7AlT0OyRZsWy7ndbzEu8BM7Rk5Le/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput23"><label for="userInput23">Who is this?</label>
- 
- <h2>Drawing 24</h2>
- <iframe src="https://drive.google.com/file/d/1VtKTjGHAT2CfuAIenH_tTf0MMzv9peZQ/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput24"><label for="userInput24">Who is this?</label>
- 
- <h2>Drawing 25</h2>
- <iframe src="https://drive.google.com/file/d/1k45Otx3yZGNdFRq9rBOKIs2VoDnjg2NM/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput25"><label for="userInput25">Who is this?</label>
- 
- <h2>Drawing 26</h2>
- <iframe src="https://drive.google.com/file/d/11uJQl9VcIkp3K5fvxxskS5XVwfHmNC8L/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput26"><label for="userInput26">Who is this?</label>
- 
- <h2>Drawing 27</h2>
- <iframe src="https://drive.google.com/file/d/1c1a27uLc3_1xDUY30QbxoOpWX7l3M3Ma/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput27"><label for="userInput27">Who is this?</label>
- 
- <h2>Drawing 28</h2>
- <iframe src="https://drive.google.com/file/d/1syg9yk6f2I8_jISb6bfk5WgT0TjmpSNI/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput28"><label for="userInput28">Who is this?</label>
- 
- <h2>Drawing 29</h2>
- <iframe src="https://drive.google.com/file/d/1NeKZ-kb9_HdzZcmMq3nm5aa16JChLwOv/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput29"><label for="userInput29">Who is this?</label>
- 
- <h2>Drawing 30</h2>
- <iframe src="https://drive.google.com/file/d/1mJIZ0GySDv8Db4eEy0hjuiklGe-xlPwu/preview" width="480" height="640"></iframe><br>
-  <input align="center" type="text" id="userInput30"><label for="userInput30">Who is this?</label>
+ <div class="page-section" id="30">
+     <h2>Drawing 30</h2>
+     <iframe src="https://drive.google.com/file/d/1mJIZ0GySDv8Db4eEy0hjuiklGe-xlPwu/preview" width="480" height="640"></iframe><br>
+     <input align="center" type="text" id="userInput30"><label for="userInput30">Who is this?</label>
+ </div>
  
 <script>
 function myFunction() {
